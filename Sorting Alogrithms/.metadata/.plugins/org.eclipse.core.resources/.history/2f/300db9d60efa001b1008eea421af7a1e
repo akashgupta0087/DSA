@@ -1,0 +1,38 @@
+package sorting.mergesort;
+
+public class MergeSort {
+	
+	public int[] sort(int start, int end, int[] arr) {
+		int[] ogArr = arr;
+		if(start < end) {
+			int mid = (start + end) / 2;
+			ogArr = split(start, mid, arr);
+			int[] leftSorted = sort(start, mid, ogArr);
+			
+			ogArr = split(mid+1, end, arr);
+			int[] rightSorted = sort(mid+1, end, ogArr);
+			ogArr = merge(leftSorted, rightSorted);
+		}
+		return ogArr;
+	}
+	
+	private int[] merge(int[] leftArr, int[] rightArr) {
+		int n = leftArr.length + rightArr.length;
+		int[] resultArr = new int[n];
+		return resultArr;
+	}
+	
+	private int[] split(int start, int end, int[] arr) {
+		int n = (end-start) + 1;
+		int[] newArr = new int[n];
+		if(start < end) {
+			for(int i = 0; i < n; i++) {
+				newArr[i] = arr[i];
+			}
+			arr = new int[newArr.length];
+			arr = newArr;
+		}
+		return arr;
+	}
+	
+}

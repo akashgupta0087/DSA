@@ -1,0 +1,13 @@
+package linkedlist.operations;
+
+import linkedlist.basic.Node;
+
+public class LinkedListPalindrome {
+
+	public boolean isPalindrome(Node node) {
+		while() {
+			
+		}
+	}
+
+}

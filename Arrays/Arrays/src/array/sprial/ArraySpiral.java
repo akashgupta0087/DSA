@@ -1,0 +1,30 @@
+package array.sprial;
+
+public class ArraySpiral {
+	
+	public static void main(String[] args) {
+		int[][] A =  {
+				{1, 2, 3},
+				{4, 5, 6},
+				{7, 8, 9},
+				
+		};
+		
+		System.out.println("Size of Array : " + A.length);
+	}
+	
+	int[] getSpiralArray(int[][] A) {
+		int [] arr= new int[A.length * A[0].length];
+		arr = A[0];
+		
+		for(int i = 0; i < A.length; i++) {
+			for(int j = 0; j < (A[i].length - i); i++) {
+				System.out.println(A[i][j]);
+			}
+		}
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+		return arr;
+	}
+	
+	
+}

@@ -1,0 +1,18 @@
+package array.sum.pairs;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SortedArraySumPairs {
+	
+	public static void main(String[] args) {
+		Map<Integer, String> map1 = new HashMap<>();
+		
+		Integer i1 = new Integer(1);
+		Integer i2 = new Integer(1);
+		
+		map1.put(i1, "One");
+		map1.put(i2, "One");
+	}
+
+}
