@@ -1,6 +1,8 @@
 package linkedlist.basic.test;
 
 import linkedlist.basic.LinkedList;
+import linkedlist.basic.Node;
+import linkedlist.operations.LinkedListReverse;
 import linkedlist.operations.LinkedListSearch;
 
 public class LinkedListTest {
@@ -69,7 +71,12 @@ public class LinkedListTest {
 		LinkedListSearch listSearch = new LinkedListSearch();
 		
 		System.out.println("\nIs Key Present Iterative : " + listSearch.isKeyPresentIterative(list.getStart(), 5));
-		System.out.print("Is Key Present Recursive : " + listSearch.isKeyPresentRecursive(list.getStart(), 5));
+		System.out.println("Is Key Present Recursive : " + listSearch.isKeyPresentRecursive(list.getStart(), 5));
+		
+		LinkedListReverse reverse =new  LinkedListReverse();
+		Node head = reverse.reverseList(list.getStart());
+		
+		reverse.viewList(head);
 	}
 
 }
