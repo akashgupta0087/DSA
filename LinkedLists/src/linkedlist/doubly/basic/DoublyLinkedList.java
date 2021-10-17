@@ -48,6 +48,8 @@ public class DoublyLinkedList {
 	
 	public void viewList(dNode head) {
 		dNode temp = head;
+		if(temp == null)
+			System.out.println("List is empty!!");
 		while(temp != null) {
 			System.out.print(" " + temp.getData());
 			temp = temp.getNext();
@@ -59,6 +61,7 @@ public class DoublyLinkedList {
 		node.setNext(prev_Node.getNext());
 		node.setPrev(prev_Node);
 		prev_Node.setNext(node);
+		size++;
 		
 		if(node.getNext() != null) {
 			node.getNext().setPrev(node);
@@ -70,12 +73,74 @@ public class DoublyLinkedList {
 		node.setNext(next_Node);
 		node.setPrev(next_Node.getPrev());
 		next_Node.setPrev(node);
+		size++;
 		
 		if(node.getPrev() != null) {
 			node.getPrev().setNext(node);
 		} else {
 			head = node;
 		}
+	}
+	
+	public void deleteAtFirst() {
+		if(head == null)
+			System.out.println("List is Empty!!");
+		
+		if(head.getNext() != null) 
+			head.getNext().setPrev(null);
+		
+		head = head.getNext();
+		size--;
+		
+	}
+	
+	public void deleteAtLast() {
+		if(head == null)
+			System.out.println("List is Empty!!");
+		else {
+			dNode temp = head;
+			for(int i = 1; i < size-1; i++)
+				temp = temp.getNext();
+			temp.getNext().setPrev(null);
+			temp.setNext(null);
+			size--;
+		}
+	}
+	
+	public void deleteNode(dNode del) {
+		if(head==null || del == null)
+			return;
+		
+		if(head == del)
+			head = head.getNext();
+		
+		if(del.getNext() != null)
+			del.getNext().setPrev(del.getPrev());
+		
+		if(del.getPrev() != null) 
+			del.getPrev().setNext(del.getNext());
+		
+		size--;
+		return;
+	}
+	
+	public void insertAtPos(int pos, int data) {
+		dNode temp = head;
+		if(head == null)
+			System.out.println("List is empty!!");
+		
+		else if(pos < 0 || pos > (size + 1))
+			System.out.println("Invalid position!!");
+		
+		else if(pos == (size + 1)) 
+			insertAtLast(data);
+		
+		else {
+			for(int i = 1; i < pos; i++)
+				temp = temp.getNext();
+			insertBeforeNode(temp, data);
+		}
+		
 	}
 	
 }
